@@ -92,6 +92,7 @@ Note:
   * If the provider does not support the discovery protocol, replace ``providerMetadata.getAuthorizationEndpointURI()`` with the authorization endpoint URL received out-of-band.
   * If the provider does not support dynamic client registration, replace ``clientInformation.getID()`` with the client id received out-of-band.
   * Make sure ``redirectURI`` matches a URI known by the provider.
+  * If you want to specify additional parameters in the authentication request, use ``com.nimbusds.openid.connect.sdk.AuthenticationRequest.Builder``.
 
 ### Receive the Authentication Response
 The authentication response is sent from the provider by redirecting the end
