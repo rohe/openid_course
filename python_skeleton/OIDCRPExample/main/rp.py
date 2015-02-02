@@ -1,8 +1,10 @@
 import json
-
-import cherrypy
 import os
 
+import cherrypy
+
+from oic.oic import Client
+from oic.utils.authn.client import CLIENT_AUTHN_METHOD
 
 __author__ = 'regu0004'
 
@@ -14,6 +16,7 @@ class RPServer(object):
         self.file_dir = file_dir
 
         self.client_metadata = json.loads(self._read_file_content("client.json"))
+        self.client = Client(client_authn_method=CLIENT_AUTHN_METHOD)
 
         # TODO get the provider configuration information
         # TODO register with the provider using the self.client_metadata
@@ -28,7 +31,7 @@ class RPServer(object):
         """Starts authentication using the OpenID Connect code flow."""
         # TODO make authentication request
 
-        redirect_url = None # TODO insert the redirect URL
+        redirect_url = None  # TODO insert the redirect URL
         raise cherrypy.HTTPRedirect(redirect_url, 302)
 
     @cherrypy.expose
@@ -37,7 +40,9 @@ class RPServer(object):
         Where the fragment identifier is received after being parsed by
         the client (using Javascript).
         """
-        response = self.rp.parse_authentication_response(kwargs["url_fragment"])
+        response = self.client.parse_response(AuthorizationResponse, info=kwargs["url_fragment"], sformat="urlencoded")
+
+        # TODO use parsed authentication response (from implicit flow) to make user info request and display result
 
         html_page = self._read_file_content("success_page.html")
         return html_page.format(None, response["access_token"], response["id_token"], None)
@@ -85,6 +90,7 @@ def main(file_dir):
     cherrypy.server.socket_port = 8090
 
     cherrypy.quickstart(RPServer(file_dir))
+
 
 if __name__ == "__main__":
     main(os.getcwd())
