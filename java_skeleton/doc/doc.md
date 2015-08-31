@@ -1,16 +1,16 @@
 # Java Cookbook for OpenID Connect Public Client
 
 This document describes how to implement an OpenID Connect (OIDC) Public Client
-using the library ["Nimbus OAuth 2.0 SDK with OpenID Connect extensions"](https://bitbucket.org/connect2id/oauth-2.0-sdk-with-openid-connect-extensions).
+using this library, [Nimbus OAuth 2.0 SDK with OpenID Connect extensions](https://bitbucket.org/connect2id/oauth-2.0-sdk-with-openid-connect-extensions).
 
-The basic "code" flow in OpenID Connect is consists of the following steps:
+The basic authentication flow in OpenID Connect consists of the following steps:
 
-  1. OpenID Provider Issuer Discovery using WebFinger
-  1. Obtaining OpenID Provider Configuration Information
-  1. Dynamic client registration
-  1. Authentication using the Authorization Code Flow
-  1. Token request
-  1. UserInfo request
+  1. Optional: OpenID Provider Issuer Discovery using WebFinger
+  1. Optional: Obtaining OpenID Provider Configuration Information
+  1. Optional: Dynamic client registration
+  1. Authentication (using one of the defined flows)
+  1. Optional: Token request
+  1. Optional: UserInfo request
 
 
 ## Issuer discovery
@@ -68,7 +68,7 @@ OIDCClientInformation clientInformation = ((OIDCClientInformationResponse)regist
 ## Authentication request
 The authentication request is done by redirecting the end user to the provider,
 for more details see the [OIDC specification](http://openid.net/specs/openid-connect-core-1_0.html#AuthRequest).
-The redirect URL is built as follows:
+The redirect URL is built as follows, using the Authorization Code Flow:
 
 ```java
 // Generate random state string for pairing the response to the request
@@ -99,7 +99,7 @@ The authentication response is sent from the provider by redirecting the end
 user to the redirect URI specified in the initial authentication request from the client.
 
 #### Code flow
-The Authorization Code can be extracted from the requested URL:
+The Authorization Code can be extracted from the query part of the redirect URL:
 ```java
 AuthenticationResponse authResp = null;
 try {
@@ -129,7 +129,7 @@ AuthorizationCode authCode = successResponse.getAuthorizationCode();
 
 #### Implicit/Hybrid flow
 When using either implicit or hybrid flow the authentication response is encoded
-in the fragment identifier of the URL. This requires additional handling, e.g.
+in the fragment part of the URL. This requires additional handling, e.g.
 using Javascript, see [Implementation Notes](http://openid.net/specs/openid-connect-core-1_0.html#FragmentNotes).
 
 After receiving the response back in the client, it can be parsed as described
@@ -137,7 +137,7 @@ in the above section.
 
 ## Token Request
 
-When an authorization code has been obtained, a
+When an authorization code (using code or hybrid flow) has been obtained, a
 [token request](http://openid.net/specs/openid-connect-core-1_0.html#TokenRequest)
 can made to get the access token and the id token:
 
