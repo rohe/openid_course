@@ -23,6 +23,8 @@ mod_auth_openidc work, using static client registration.
 
 apache2.conf path: `/etc/apache2/apache2.conf`
 
+NOTE: Det redirect URL should not be the same as the resource you want to protect. The redirect_uri is only used by the apache module. It should also be protected by the openID connect  
+
 Add to apache2.conf:
 
 ```apache
@@ -49,7 +51,12 @@ LoadModule auth_openidc_module /usr/lib/apache2/modules/mod_auth_openidc.so
   OIDCScope "openid"
   OIDCIDTokenSignedResponseAlg RS256
 
-  <Location />
+  <Location /<your_resource_url>>
+    AuthType openid-connect
+    Require valid-user
+  </Location>
+
+  <Location /redirect_uri>
     AuthType openid-connect
     Require valid-user
   </Location>
@@ -66,6 +73,7 @@ Configure
 1. `OIDCClientID`
 1. `OIDCClientSecret`
 1. `OIDCRedirectURI` 
+1. `your_resource_url`
 
 # Restart Apache:
 
