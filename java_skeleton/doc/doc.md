@@ -42,7 +42,7 @@ using the [client registration](http://openid.net/specs/openid-connect-registrat
 
 ```java
 String jsonMetadata = "{\"application_type\": \"web\",\"redirect_uris\": [\"http://client.example.com/auth_callback\"],\"response_types\": [\"code\"]}";
-OIDCClientMetadata metadata = OIDCClientMetadata.parse(JSONObjectUtils.parseJSONObject(jsonMetadata));
+OIDCClientMetadata metadata = OIDCClientMetadata.parse(JSONObjectUtils.parse(jsonMetadata));
 
 // Select the first (and only) redirect URI
 URI redirectURI = metadata.getRedirectionURIs().iterator().next();
