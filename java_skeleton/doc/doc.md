@@ -2,6 +2,8 @@
 
 This document describes how to implement an OpenID Connect (OIDC) Public Client
 using this library, [Nimbus OAuth 2.0 SDK with OpenID Connect extensions](https://bitbucket.org/connect2id/oauth-2.0-sdk-with-openid-connect-extensions).
+Full javadoc can be found [here](http://www.javadoc.io/doc/com.nimbusds/oauth2-oidc-sdk/), and
+for the accompanying JOSE library [Nimbus JOSE + JWT](http://www.javadoc.io/doc/com.nimbusds/nimbus-jose-jwt/).
 
 The basic authentication flow in OpenID Connect consists of the following steps:
 
@@ -210,7 +212,7 @@ private JSONObject getProviderRSAJWK(InputStream is) {
 
   // Parse the data as json
   String jsonString = sb.toString();
-  JSONObject json = JSONObjectUtils.parseJSONObject(jsonString);
+  JSONObject json = JSONObjectUtils.parse(jsonString);
 
   // Find the RSA signing key
   JSONArray keyList = (JSONArray) json.get("keys");
