@@ -26,12 +26,12 @@ This document describes how to setup the provided Java code
   1. Run WebServer as a Java application.
   1. The application should output something like:
 
-      [Thread-0] INFO spark.webserver.SparkServer - == Spark has ignited ...
-      [Thread-0] INFO spark.webserver.SparkServer - >> Listening on 0.0.0.0:8090
-      [Thread-0] INFO org.eclipse.jetty.server.Server - jetty-9.0.2.v20130417
-      [Thread-0] INFO org.eclipse.jetty.server.ServerConnector - Started ServerConnector@5967e514{HTTP/1.1}{0.0.0.0:8090}
+         [Thread-0] INFO spark.webserver.SparkServer - == Spark has ignited ...
+         [Thread-0] INFO spark.webserver.SparkServer - >> Listening on 0.0.0.0:8090
+         [Thread-0] INFO org.eclipse.jetty.server.Server - jetty-9.0.2.v20130417
+         [Thread-0] INFO org.eclipse.jetty.server.ServerConnector - Started ServerConnector@5967e514{HTTP/1.1}{0.0.0.0:8090}
 
-  1. Verify the server is running at http://localhost:8090
+  1. Verify the server is running at [http://localhost:8090](http://localhost:8090)
 
 3. Start adding to the skeleton code
   1. The missing parts are marked with ``TODO`` in
