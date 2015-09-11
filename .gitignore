@@ -1,5 +1,11 @@
+# Python
 *.pyc
 *.idea
+
+# Java
 *.class
 *target
 *bin
+.classpath
+.project
+.settings
