@@ -1,4 +1,4 @@
-# Test different authentication flows
+# Different authentication flows
 
 1. [Code flow](http://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth)
     1. In the authentication request:
@@ -16,7 +16,7 @@
         * Specify``redirect_uri = http://localhost:8090/implicit_flow_callback``
 
     
-# Test static and dynamic client registration
+# Static and dynamic client registration
 
 1. Static client registration
     1. Refer to each implementation's documentation for instructions.
@@ -25,7 +25,7 @@
     1. Refer to each implementation's documentation for instructions.
  
     
-# Test requesting additional claims and special behavior
+# Requesting additional claims and special behavior
 *Note: this can not be done with the Apache module.**
 
 1. [Request claims using the ``scope`` parameter](http://openid.net/specs/openid-connect-core-1_0.html#ScopeClaims)
