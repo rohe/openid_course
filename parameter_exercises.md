@@ -40,7 +40,8 @@
     1. In the authentication request
         * Specify ``response_type = code``.
         * Specify the following in the claims request (pseudo-code):
-        
+            
+            ```
             {  
                "userinfo":{  
                   "given_name":{  
@@ -58,8 +59,9 @@
                   "phone_number":null
                }
             }
+            ``` 
             
-    1. Observere which claims are returned and how they are returned (in the user info or in the ID token).
+    1. Observe which claims are returned and how they are returned (in the user info or in the ID token).
     
 1. Request a certain behavior by the OP using ``scope`` values
     1. In the authentication request
