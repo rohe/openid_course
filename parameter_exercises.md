@@ -68,25 +68,10 @@
     1. Observe what claims are returned and their values.
     1. Try logging in as a another user and again observe which claims are returned.
      
-# Signing and encryption
+# Signed userinfo
 
 1. Request a signed UserInfo Response
     1. In the registration request:
         * Specify ``userinfo_signed_response_alg = RS256``
     1. Refer to each implementation's documentation for instructions on how to
        verify the signature.
-
-1. Request an encrypted UserInfo Response
-    1. In the registration request:
-        * Specify ``id_token_encrypted_response_enc = RSA1_5``
-        * Specify ``userinfo_encrypted_response_alg = A128CBC-HS256``
-    1. Refer to each implementation's documentation for instructions on how to
-       decrypt the response.
-        
-1. Request a signed AND encrypted UserInfo Response
-    1. In the registration request:
-        * Specify ``userinfo_signed_response_alg = RS256``
-        * Specify ``userinfo_encrypted_response_enc = RSA1_5``
-        * Specify ``userinfo_encrypted_response_alg = A128CBC-HS256``
-    1. Refer to each implementation's documentation for instructions on how to
-       verify the signature and decrypt the response.
