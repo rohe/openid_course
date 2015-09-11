@@ -19,6 +19,8 @@
 # Static and dynamic client registration
 
 1. Static client registration
+    1. Register with the provider, making sure to specify the correct ``redirect_uris`` (see ``client.json``).
+       Store the generated credentials (``client_id`` and ``client_secret``).
     1. Refer to each implementation's documentation for instructions.
     
 1. Dynamic client registration (**note: this can not be done with the Apache module**)
@@ -36,6 +38,7 @@
     
 1. [Request claims using the ``claims`` parameter](http://openid.net/specs/openid-connect-core-1_0.html#ClaimsParameter)
     1. In the authentication request
+        * Specify ``response_type = code``.
         * Specify the following in the claims request (pseudo-code):
         
             {  
@@ -79,12 +82,11 @@
         * Specify ``userinfo_encrypted_response_alg = A128CBC-HS256``
     1. Refer to each implementation's documentation for instructions on how to
        decrypt the response.
-    
         
 1. Request a signed AND encrypted UserInfo Response
     1. In the registration request:
         * Specify ``userinfo_signed_response_alg = RS256``
-        * Specify ``id_token_encrypted_response_enc = RSA1_5``
+        * Specify ``userinfo_encrypted_response_enc = RSA1_5``
         * Specify ``userinfo_encrypted_response_alg = A128CBC-HS256``
     1. Refer to each implementation's documentation for instructions on how to
        verify the signature and decrypt the response.
