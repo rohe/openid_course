@@ -22,12 +22,14 @@ import com.nimbusds.openid.connect.sdk.rp.OIDCClientMetadata;
 
 public class Client {
 	// TODO specify the correct path
-	public static Path FILE_DIR = Paths.get(".");
+	public static Path ROOT_PATH = Paths.get(".");
+	// TODO specify the correct URL
+	public static String ISSUER = "http://example.com";
 
 	private OIDCClientInformation clientInformation;
 	private OIDCProviderMetadata providerMetadata;
 
-	public Client(String clientMetadataString, String issuer)
+	public Client(String clientMetadataString)
 			throws ParseException, URISyntaxException, IOException,
 			SerializeException {
 		OIDCClientMetadata clientMetadata = OIDCClientMetadata
@@ -36,7 +38,7 @@ public class Client {
 
 	public String authenticate(Request req, Response res)
 			throws URISyntaxException, SerializeException {
-		// session object that can be used to store store state between requests
+		// session object that can be used to store state between requests
 		Session session = req.session();
 
 		// TODO make authentication request

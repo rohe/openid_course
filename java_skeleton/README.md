@@ -35,7 +35,7 @@ This document describes how to setup the provided Java code
 
   1. Verify the server is running at [http://localhost:8090](http://localhost:8090)
 
-3. Start adding to the skeleton code
+1. Start adding to the skeleton code
   1. The missing parts are marked with ``TODO`` in
        \<project_path>/src/oidc_rp/Client.java.
   1. Read the [Java Cookbook](doc/doc.md) for more information

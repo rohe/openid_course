@@ -18,7 +18,7 @@ public class FileHandling {
 	 * @throws IOException
 	 */
 	public static String readFromFile(String path) throws IOException {
-		return new String(Files.readAllBytes(Client.FILE_DIR.resolve(Paths
+		return new String(Files.readAllBytes(Client.ROOT_PATH.resolve(Paths
 				.get(path))), StandardCharsets.UTF_8);
 	}
 }
