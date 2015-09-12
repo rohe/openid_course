@@ -1,3 +1,2 @@
--e git+https://github.com/rohe/pyjwkest.git#egg=pyjwkest
--e git+https://github.com/rohe/pyoidc.git#egg=oic
-cherrypy==3.6.0
+git+https://github.com/rohe/pyoidc.git
+cherrypy==3.8.0
