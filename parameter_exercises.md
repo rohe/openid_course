@@ -19,11 +19,11 @@
 # Static and dynamic client registration
 
 1. Static client registration
-    1. Register with the provider, making sure to specify the correct ``redirect_uris`` (see ``client.json``).
+    1. Register with the provider, making sure to specify the correct ``redirect_uris`` (see ``client.json`` for Python and Java, or the Apache configuration).
        Store the generated credentials (``client_id`` and ``client_secret``).
     1. Refer to each implementation's documentation for instructions.
     
-1. Dynamic client registration (**note: this can not be done with the Apache module**)
+1. Dynamic client registration
     1. Refer to each implementation's documentation for instructions.
  
     
