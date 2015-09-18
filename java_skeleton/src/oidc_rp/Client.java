@@ -24,7 +24,7 @@ public class Client {
 	// TODO specify the correct path
 	public static Path ROOT_PATH = Paths.get(".");
 	// TODO specify the correct URL
-	public static String ISSUER = "http://example.com";
+	public static String ISSUER = "https://example.com";
 
 	private OIDCClientInformation clientInformation;
 	private OIDCProviderMetadata providerMetadata;
