@@ -35,16 +35,10 @@ public class WebServer {
 	 */
 	public static int SERVER_PORT = 8090;
 
-	/**
-	 * Issuer identifier (URL of the provider)
-	 */
-
-	public static String ISSUER = "http://localhost:8000";
-
 	public static void main(String[] args) throws ParseException, IOException,
 			URISyntaxException, SerializeException {
 		String jsonMetadata = FileHandling.readFromFile("client.json");
-		Client client = new Client(jsonMetadata, ISSUER);
+		Client client = new Client(jsonMetadata);
 
 		/*** Spark webserver setup ***/
 		port(SERVER_PORT);
