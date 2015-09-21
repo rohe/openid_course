@@ -1,33 +1,22 @@
 import os
 
-from oic.oauth2 import rndstr
 from oic.oic import Client as OIDCClient
-from oic.oic.message import AuthorizationResponse, RegistrationResponse
-
 from oic.utils.authn.client import CLIENT_AUTHN_METHOD
-
-from .defaults import SCOPE_BEHAVIOR
 
 __author__ = 'regu0004'
 
 
 class Client(object):
     # TODO specify the correct path
-    ROOT_PATH = "."
+    ROOT_PATH = "/Users/regu0004/dev/oidc_course/"
     # TODO specify the correct URL
     ISSUER = "https://example.com"
 
     def __init__(self, client_metadata):
         self.client = OIDCClient(client_authn_method=CLIENT_AUTHN_METHOD)
 
-        self.provider_info = self.client.provider_config(Client.ISSUER)
-
-        static = False
-        if static:
-            reg_info = RegistrationResponse(**{"client_id": "TODO", "client_secret": "TODO"})
-            self.client.store_registration_info(reg_info)
-        else:
-            self.client.register(self.provider_info["registration_endpoint"], **client_metadata)
+        # TODO get the provider configuration information
+        # TODO register with the provider using the client_metadata
 
     def authenticate(self, session):
         # Use the session object to store state between requests
