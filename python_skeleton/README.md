@@ -20,7 +20,7 @@ On Ubuntu:
 ## Project setup
 
 ### Optional pre-setup
-1. Setup a [virtual environment](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
+1. Setup a [virtual environment](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
 2. Activate the new virtual environment.
 
 ### Code setup
@@ -33,7 +33,7 @@ On Ubuntu:
   1. Verify the RP is running at [http://localhost:8090](http://localhost:8090).
   
 1. Start adding to the skeleton code:
-  1. The missing parts are marked with ``TODO``'s in ``oidc_rp/client.py``.
+  1. The missing parts are marked with ``TODO`` in ``oidc_rp/client.py``.
   1. Read the [Python Cookbook](https://dirg.org.umu.se/static/pyoidc/howto/rp.html) for more
      information about how to use the pyOIDC OpenID Connect library.
   1. Make sure to delete cookies and cached data in the browser while
