@@ -1,5 +1,5 @@
 This document describes how to setup the provided Java code
-(in the directory java_skeleton/) in Eclipse.
+(in the directory ``src/``) in Eclipse.
 
 
 # Prerequisites
@@ -10,20 +10,16 @@ This document describes how to setup the provided Java code
 
 # Setup using Eclipse
 
-1. Import the project in Eclipse
+1. Import the project in Eclipse:
   1. File -> Import -> Maven -> Existing Maven Projects
-    1. Select the folder java_skeleton directory as 'Root Directory' and
+    1. Select the ``java_skeleton/`` directory as 'Root Directory' and
          press Finish.
-    1. Do Maven install:
-        1. In the main menu: Run -> Run Configurations...
-        1. Create new 'Maven Build' configuration.
-        1. Base directory: 'Browse Workspace...' and select the skeleton project.
-        1. Specify 'clean compile' as 'Goals'.
-        1. Apply
+         
+    1. Make sure you're using the Java SE 8 JRE for the project (see [Eclipse settings](http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Ftasks%2Ftask-choose_config_jre.htm)).  
 
-1. Test that the project runs
-  1. Specify the path to the directory containing all necessary files (client.json, index.html, etc.) Client::FILE_DIR.
-  1. Run WebServer as a Java application.
+1. Test that the project runs:
+  1. Specify the path to the directory containing all necessary files (``client.json``, ``index.html``, etc.) in ``Client::ROOT_PATH`` (in ``src/oidc_rp/Client.java``).
+  1. Run ``WebServer.java`` as a Java application.
   1. The application should output something like:
 
          ```
@@ -33,11 +29,11 @@ This document describes how to setup the provided Java code
          [Thread-0] INFO org.eclipse.jetty.server.ServerConnector - Started ServerConnector@5967e514{HTTP/1.1}{0.0.0.0:8090}
          ```
 
-  1. Verify the server is running at [http://localhost:8090](http://localhost:8090)
+  1. Verify the Relying Party (RP) is running at [http://localhost:8090](http://localhost:8090)
 
-1. Start adding to the skeleton code
+1. Start adding to the skeleton code:
   1. The missing parts are marked with ``TODO`` in
-       \<project_path>/src/oidc_rp/Client.java.
+       ``src/oidc_rp/Client.java``.
   1. Read the [Java Cookbook](doc/doc.md) for more information
        about how to use the Nimbus OpenID Connect library.
   1. Make sure to delete cookies and cached data in the browser while
