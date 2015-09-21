@@ -87,6 +87,9 @@ for more information.
 1. Restart Apache: ``service apache2 restart``
 
 1. Verify it works by browsing to [https://localhost:8090/protected](https://localhost:8090/protected).
+   
+   **Note: you may get a warning in your browser about the certificate for ``localhost``, due to
+   it being self-signed. Proceed to the site anyway (since this is expected).**
 
 1. If any errors occur, view the log at ``/var/log/apache2/error.log`` and use your browsers tools
    to view network traffic and examine the requests/responses.
