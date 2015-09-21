@@ -1,4 +1,4 @@
-This document describes how to setup the Apache module ``mod_auth_openidc``.
+This document describes how to setup the Apache module [``mod_auth_openidc``](https://github.com/pingidentity/mod_auth_openidc).
 
 # Setup
 
@@ -8,17 +8,17 @@ Either use the accompanying Vagrant box or set it up locally.
 
 1. Install Vagrant: http://www.vagrantup.com/downloads
 1. Install VirtualBox: https://www.virtualbox.org/
-1. Start the Vagrant box:
+1. Start the Vagrant box and ssh into it:
   
    ```bash
-   cd apache_skeleton/vagrant
+   cd vagrant/
    vagrant up --provider=virtualbox
    vagrant ssh
    ```
   
 ## Local setup (Ubuntu)
 
-1. Refer to the install script in ``vagrant/install_Apache.sh``.
+1. Refer to the install script in [``vagrant/install_Apache.sh``](vagrant/install_Apache.sh).
 
 # Apache configuration
 Refer to the [mod_auth_openidc wiki](https://github.com/pingidentity/mod_auth_openidc/wiki) or the
@@ -40,11 +40,11 @@ for more information.
    chmod 777 /var/lib/apache2/mod_auth_openidc
    ```
 
-1. Setup CGI:
+1. Setup CGI script displaying result after authentication:
 
    ```bash
    mkdir /usr/lib/protected-cgi-bin
-   cp openidc_params.cgi /usr/lib/protected-cgi-bin/
+   cp /apache_skeleton/openidc_params.cgi /usr/lib/protected-cgi-bin/
    chmod 755 /usr/lib/protected-cgi-bin/openidc_params.cgi
    ```
        
@@ -61,12 +61,11 @@ for more information.
     
     <VirtualHost _default_:8090>
     OIDCMetadataDir /var/lib/apache2/mod_auth_openidc
-    OIDCSSLValidateServer Off
     
     OIDCCryptoPassphrase py7h0n_rul35!
     OIDCRedirectURI https://localhost:8090/protected/redirect_uri
     
-    ScriptAlias "/protected" "/usr/lib/protected-cgi-bin/openidc_headers.cgi"
+    ScriptAlias "/protected" "/usr/lib/protected-cgi-bin/openidc_params.cgi"
     <Location /protected>
       AuthType openid-connect
       Require valid-user
@@ -81,8 +80,8 @@ for more information.
 1. Remove the default config and link the new one:
        
    ```bash
-   sudo rm /etc/apache2/sites-enabled/000-default.conf 
-   sudo ln -s /etc/apache2/sites-available/oidc.conf /etc/apache2/sites-enabled/oidc.conf
+   rm /etc/apache2/sites-enabled/000-default.conf 
+   ln -s /etc/apache2/sites-available/oidc.conf /etc/apache2/sites-enabled/oidc.conf
    ```
        
 1. Restart Apache: ``service apache2 restart``
