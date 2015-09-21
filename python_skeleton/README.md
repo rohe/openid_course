@@ -1,5 +1,5 @@
 This document describes how to setup the provided Python code
-(in the directory python_skeleton/).
+(in the directory ``OIDCRPExample/``).
 
 # Prerequisites
 
@@ -27,14 +27,15 @@ On Ubuntu:
 1. Install the dependencies: ``pip install -r requirements.txt``
 
 1. Test that the project runs:
-  1. Specify the path to the directory containing all necessary files (client.json, index.html, etc.) in Client.ROOT_PATH (in client.py).
-  1. ``python -m oidc_rp``
-  1. Verify the server is running at [http://localhost:8090](http://localhost:8090).
+  1. Specify the path to the root directory containing all necessary files (``client.json``, 
+     ``index.html``, etc.) in ``Client.ROOT_PATH`` (in ``oidc_rp/client.py``).
+  1. Run the Relying Party (RP): ``python3 -m oidc_rp`` (from the ``OIDCRPExample/`` directory).
+  1. Verify the RP is running at [http://localhost:8090](http://localhost:8090).
   
 1. Start adding to the skeleton code:
-  1. The missing parts are marked with TODO's in \<project_path>/oidc_rp/client.py.
+  1. The missing parts are marked with ``TODO``'s in ``oidc_rp/client.py``.
   1. Read the [Python Cookbook](https://dirg.org.umu.se/static/pyoidc/howto/rp.html) for more
-       information about how to use the pyOIDC OpenID Connect library.
+     information about how to use the pyOIDC OpenID Connect library.
   1. Make sure to delete cookies and cached data in the browser while
-       testing to avoid strange results (e.g. due to the browser caching
-       redirects, etc.).
+     testing to avoid strange results (e.g. due to the browser caching
+     redirects, etc.).
