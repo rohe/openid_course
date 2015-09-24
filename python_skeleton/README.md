@@ -30,7 +30,8 @@ On Ubuntu:
   1. Specify the path to the root directory containing all necessary files (``client.json``, 
      ``index.html``, etc.) in ``Client.ROOT_PATH`` (in ``oidc_rp/client.py``).
   1. Run the Relying Party (RP): ``python -m oidc_rp`` (from the ``OIDCRPExample/`` directory).
-  1. Verify the RP is running at [http://localhost:8090](http://localhost:8090).
+  1. Verify the RP is running at [http://localhost:8090](http://localhost:8090) **using Firefox**
+     (Google Chrome has some issues with CherryPy's sessions).
   
 1. Start adding to the skeleton code:
   1. The missing parts are marked with ``TODO`` in ``oidc_rp/client.py``.
