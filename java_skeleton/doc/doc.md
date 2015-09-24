@@ -145,8 +145,9 @@ can made to get the access token and the id token:
 ```java
 TokenRequest tokenReq = new TokenRequest(
   providerMetadata.getTokenEndpointURI(),
-  clientInformation.getID(), new AuthorizationCodeGrant(authCode,
-  redirectURI));
+  new ClientSecretBasic(clientInformation.getID(),
+						clientInformation.getSecret()),
+  new AuthorizationCodeGrant(authCode, redirectURI));
 
 HTTPResponse tokenHTTPResp = null;
 try {
