@@ -34,7 +34,7 @@ This document describes how to setup the provided Java code
 1. Start adding to the skeleton code:
   1. The missing parts are marked with ``TODO`` in
        ``src/oidc_rp/Client.java``.
-  1. Read the [Java Cookbook](doc/doc.md) for more information
+  1. Read the [Java Cookbook](http://connect2id.com/products/nimbus-oauth-openid-connect-sdk/guides/java-cookbook-for-openid-connect-public-clients) for more information
        about how to use the Nimbus OpenID Connect library.
   1. Make sure to delete cookies and cached data in the browser while
        testing to avoid strange results (e.g. due to the browser caching
