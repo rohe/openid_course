@@ -55,6 +55,8 @@ public class Client {
 		String url = req.url() + "?" + req.raw().getQueryString();
 
 		// TODO parse authentication response from url
+		// TODO validate the 'state' parameter
+
 		// TODO make token request
 		// TODO validate the ID Token according to the OpenID Connect spec (sec
 		// 3.1.3.7.)
@@ -77,6 +79,8 @@ public class Client {
 		String url = req.url() + "#" + req.queryParams("url_fragment");
 
 		// TODO parse authentication response from url
+		// TODO validate the 'state' parameter
+
 		// TODO validate the ID Token according to the OpenID Connect spec (sec
 		// 3.2.2.11.)
 

@@ -28,6 +28,8 @@ class Client(object):
 
     def code_flow_callback(self, auth_response, session):
         # TODO parse the authentication response
+        # TODO validate the 'state' parameter
+
         # TODO make token request
         # TODO validate the ID Token according to the OpenID Connect spec (sec 3.1.3.7.)
         # TODO make userinfo request
@@ -41,6 +43,7 @@ class Client(object):
 
     def implicit_flow_callback(self, auth_response, session):
         # TODO parse the authentication response
+        # TODO validate the 'state' parameter
         # TODO validate the ID Token according to the OpenID Connect spec (sec 3.2.2.11.)
 
         # TODO set the appropriate values
