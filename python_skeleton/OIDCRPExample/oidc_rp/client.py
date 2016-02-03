@@ -8,7 +8,7 @@ __author__ = 'regu0004'
 
 class Client(object):
     # TODO specify the correct path
-    ROOT_PATH = "/Users/regu0004/dev/oidc_course/"
+    ROOT_PATH = "."
     # TODO specify the correct URL
     ISSUER = "https://example.com"
 
