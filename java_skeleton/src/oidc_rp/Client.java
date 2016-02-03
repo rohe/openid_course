@@ -34,6 +34,9 @@ public class Client {
 			SerializeException {
 		OIDCClientMetadata clientMetadata = OIDCClientMetadata
 				.parse(JSONObjectUtils.parse(clientMetadataString));
+
+        // TODO get the provider configuration information
+        // TODO register with the provider using the clientMetadata
 	}
 
 	public String authenticate(Request req, Response res)
