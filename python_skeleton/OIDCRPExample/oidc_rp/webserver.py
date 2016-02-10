@@ -14,8 +14,8 @@ class RPServer(object):
         return "Python " + read_from_file("index.html")
 
     @cherrypy.expose
-    def authenticate(self):
-        redirect_url = self.client.authenticate(cherrypy.session)
+    def authenticate(self, flow_type=''):
+        redirect_url = self.client.authenticate(cherrypy.session, flow_type)
         raise cherrypy.HTTPRedirect(redirect_url, 302)
 
     @cherrypy.expose

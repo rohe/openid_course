@@ -8,9 +8,9 @@ __author__ = 'regu0004'
 
 class Client(object):
     # TODO specify the correct path
-    ROOT_PATH = "."
+    ROOT_PATH = "/home/ikakavas/code/oid_course/openid_course"
     # TODO specify the correct URL
-    ISSUER = "https://example.com"
+    ISSUER = "https://op1.test.inacademia.org"
 
     def __init__(self, client_metadata):
         self.client = OIDCClient(client_authn_method=CLIENT_AUTHN_METHOD)
@@ -18,7 +18,8 @@ class Client(object):
         # TODO get the provider configuration information
         # TODO register with the provider using the client_metadata
 
-    def authenticate(self, session):
+    def authenticate(self, session, flow_type):
+        # flow_type can be 'code', 'implicit', or an empty string
         # Use the session object to store state between requests
 
         # TODO make authentication request
