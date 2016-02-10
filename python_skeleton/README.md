@@ -14,9 +14,13 @@ On Mac:
 
     brew install libffi
     
+On CentOS:
+
+    yum install libffi-devel
+        
 On Ubuntu:
 
-    apt-get install libffi-dev libsasl2-dev
+    apt-get install python-dev python-pip libssl-dev libffi-dev libsasl2-dev
         
 ## Project setup
 

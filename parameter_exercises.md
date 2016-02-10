@@ -28,7 +28,6 @@
  
     
 # Requesting additional claims and special behavior
-*Note: this can not be done with the Apache module.**
 
 1. [Request claims using the ``scope`` parameter](http://openid.net/specs/openid-connect-core-1_0.html#ScopeClaims)
     1. In the authentication request:
