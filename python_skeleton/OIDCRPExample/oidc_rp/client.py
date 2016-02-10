@@ -8,9 +8,9 @@ __author__ = 'regu0004'
 
 class Client(object):
     # TODO specify the correct path
-    ROOT_PATH = "/home/ikakavas/code/oid_course/openid_course"
+    ROOT_PATH = "."
     # TODO specify the correct URL
-    ISSUER = "https://op1.test.inacademia.org"
+    ISSUER = "https://example.com"
 
     def __init__(self, client_metadata):
         self.client = OIDCClient(client_authn_method=CLIENT_AUTHN_METHOD)
