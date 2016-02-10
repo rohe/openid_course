@@ -41,8 +41,13 @@ public class Client {
 
 	public String authenticate(Request req, Response res)
 			throws URISyntaxException, SerializeException {
-		// session object that can be used to store state between requests
-		Session session = req.session();
+		//flow_type can be 'code' or 'implicit'
+        String flow_type = null;
+        if (null != req.raw().getQueryString()) {
+            flow_type = (req.raw().getQueryString().split("=")[1]);
+        }
+        // session object that can be used to store state between requests`
+        Session session = req.session();
 
 		// TODO make authentication request
 

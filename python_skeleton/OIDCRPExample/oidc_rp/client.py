@@ -18,7 +18,8 @@ class Client(object):
         # TODO get the provider configuration information
         # TODO register with the provider using the client_metadata
 
-    def authenticate(self, session):
+    def authenticate(self, session, flow_type):
+        # flow_type can be 'code', 'implicit', or an empty string
         # Use the session object to store state between requests
 
         # TODO make authentication request
@@ -57,6 +58,9 @@ def success_page(auth_code, access_token, id_token_claims, userinfo):
     html_page = read_from_file("success_page.html")
     return html_page.format(auth_code, access_token, id_token_claims, userinfo)
 
+def error_page(error_message, error_description="Not_Available"):
+    html_page = read_from_file("error_page.html")
+    return html_page.format(error_message, error_description)
 
 def read_from_file(path):
     full_path = os.path.join(Client.ROOT_PATH, path)

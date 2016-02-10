@@ -119,4 +119,26 @@ public class WebServer {
 		return MessageFormat.format(successPage, authCode, accessToken,
 				idTokenString, userInfoString);
 	}
+
+    /**
+     * Build HTML summary of a failed authentication flow for troubleshooting.
+     *
+     * @param errorMessage
+     *            A short error message indicating what went wrong
+     * @param errorDetails
+     *            An optional, longer, description of the error cause
+     *            (stacktrace, error details, etc.)
+     * @return response containing HTML formatted
+     */
+    public static String errorPage(String errorMessage, String errorDetails)
+                        throws IOException {
+        if (null != errorMessage){
+            errorMessage = "Error message was not provided";
+        }
+        if (null != errorDetails){
+            errorDetails = "Error details were not provided";
+        }
+        String errorPage = FileHandling.readFromFile("error_page.html");
+        return MessageFormat.format(errorPage, errorMessage, errorDetails);
+    }
 }

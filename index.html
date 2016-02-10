@@ -5,7 +5,11 @@
 
 <b>Tests</b>
 <form action='/authenticate' method='GET'>
-<input type='submit' value='Start authentication' autofocus>
+
+    <input type='radio' name='flow_type' value='code' checked='checked'>Authorization Code Flow</input></br>
+    <input type='radio' name='flow_type' value='code'>Implicit Flow</input></br>
+    </br>
+    <input type='submit' value='Start authentication' autofocus>
 </form>
 
 </body>
