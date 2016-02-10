@@ -15,7 +15,7 @@ On Mac:
     
 On Ubuntu:
 
-    apt-get install libffi-dev libsasl2-dev
+    apt-get install python-dev python-pip libssl-dev libffi-dev libsasl2-dev
         
 ## Project setup
 
