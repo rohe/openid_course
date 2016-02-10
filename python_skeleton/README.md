@@ -5,6 +5,7 @@ This document describes how to setup the provided Python code
 
 * Python 2.7 or 3.4.3
 * Homebrew if using Mac
+* PyCharm Community Edition: https://www.jetbrains.com/pycharm/download/
 
 # Setup
 
@@ -29,7 +30,7 @@ On Ubuntu:
 1. Test that the project runs:
   1. Specify the path to the root directory containing all necessary files (``client.json``, 
      ``index.html``, etc.) in ``Client.ROOT_PATH`` (in ``oidc_rp/client.py``).
-  1. Run the Relying Party (RP): ``python -m oidc_rp`` (from the ``OIDCRPExample/`` directory).
+  1. Run the Relying Party (RP): ``python runner.py`` (from the ``OIDCRPExample/`` directory).
   1. Verify the RP is running at [http://localhost:8090](http://localhost:8090) **using Firefox**
      (Google Chrome has some issues with CherryPy's sessions).
   
