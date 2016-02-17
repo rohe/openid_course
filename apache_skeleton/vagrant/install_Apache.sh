@@ -1,10 +1,21 @@
 #!/usr/bin/env bash
-PKG=~/mod_auth_openidc.deb
+
+MOD_AUTH_OPENIDC_COMMIT=4673a64
+
+# Install Apache
+sudo apt-get update
+sudo apt-get install -y apache2
+
+# Install dependencies for building mod_auth_openidc
+sudo apt-get install -y apache2-dev libssl-dev libcurl4-openssl-dev libjansson-dev libpcre3-dev autoconf
 
 # Fetch mod_auth_openidc
-wget https://github.com/pingidentity/mod_auth_openidc/releases/download/v1.8.4/libapache2-mod-auth-openidc_1.8.4-1ubuntu1.trusty.1_amd64.deb -O $PKG
+wget https://github.com/pingidentity/mod_auth_openidc/archive/${MOD_AUTH_OPENIDC_COMMIT}.tar.gz -O mod_auth_openidc.tar.gz
+mkdir mod_auth_openidc && tar zxvf mod_auth_openidc.tar.gz -C mod_auth_openidc --strip-components 1
 
-# Install Apache and mod_auth_openidc
-sudo apt-get update
-sudo apt-get install -y apache2 gdebi
-sudo gdebi -n $PKG
+# Compile and install mod_auth_openidc
+cd mod_auth_openidc/
+./autogen.sh
+./configure --with-apxs2=/usr/bin/apxs2
+make
+sudo make install
