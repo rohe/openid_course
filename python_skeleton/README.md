@@ -10,9 +10,13 @@ This document describes how to setup the provided Python code
 # Setup
 
 ## System setup
+
 On Mac:
 
-    brew install libffi
+* Install pip: https://pip.pypa.io/en/stable/installing/
+* Install libffi:
+
+      brew install libffi
     
 On CentOS:
 
