@@ -16,7 +16,9 @@ On Mac:
 * Install pip: https://pip.pypa.io/en/stable/installing/
 * Install libffi:
 
-      brew install libffi
+  ```
+  brew install libffi
+  ```  
     
 On CentOS:
 
