@@ -8,7 +8,7 @@ Either use the accompanying Vagrant box or set it up locally.
 
 1. Install Vagrant: https://www.vagrantup.com/downloads.html
 1. Install VirtualBox: https://www.virtualbox.org/
-1. Start the Vagrant box and ssh into it:
+1. Start the Vagrant box and ssh into it by running the following commands in the ``apache_skeleton/`` folder:
   
    ```bash
    cd vagrant/

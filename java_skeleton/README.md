@@ -1,5 +1,5 @@
 This document describes how to setup the provided Java code
-(in the directory ``src/``) in Eclipse.
+(in the directory ``java_skeleton/src``) in Eclipse.
 
 
 # Prerequisites

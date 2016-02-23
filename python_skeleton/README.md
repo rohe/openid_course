@@ -1,5 +1,5 @@
 This document describes how to setup the provided Python code
-(in the directory ``OIDCRPExample/``).
+(in the directory ``python_skeleton/OIDCRPExample/``).
 
 # Prerequisites
 
