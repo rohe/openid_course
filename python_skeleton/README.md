@@ -46,7 +46,7 @@ On Ubuntu:
   
 1. Start adding to the skeleton code:
   1. The missing parts are marked with ``TODO`` in ``oidc_rp/client.py``.
-  1. Read the [Python Cookbook](https://dirg.org.umu.se/static/pyoidc/howto/rp.html) for more
+  1. Read the [Python Cookbook](https://github.com/rohe/pyoidc/blob/master/doc/howto/rp.rst) for more
      information about how to use the pyOIDC OpenID Connect library.
   1. Make sure to delete cookies and cached data in the browser while
      testing to avoid strange results (e.g. due to the browser caching
