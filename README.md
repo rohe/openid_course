@@ -10,3 +10,17 @@ After completing the assignments, experiment with your setup by applying the
 suggested tweaks in [OpenID Connect Parameter options](parameter_exercises.md). 
 
 All OpenID Connect specifications can be found at http://openid.net/developers/specs/.
+
+# Provider information
+
+A custom OpenID Connect Provider with the issuer URI `https://op1.test.inacademia.org` can be used to test your Relying
+Party against.
+
+Static client registration can be performed through the web interface at `https://op1.test.inacademia.org/client_registration/`.
+
+It has the following username-password pairs configured:
+```
+diana - krall
+babs - howes
+upper - crust
+```
