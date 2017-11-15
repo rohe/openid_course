@@ -38,16 +38,16 @@ On Ubuntu:
 1. Install the dependencies: ``pip install -r requirements.txt``
 
 1. Test that the project runs:
-  1. Specify the path to the root directory containing all necessary files (``client.json``, 
+   1. Specify the path to the root directory containing all necessary files (``client.json``, 
      ``index.html``, etc.) in ``Client.ROOT_PATH`` (in ``oidc_rp/client.py``).
-  1. Run the Relying Party (RP): ``python runner.py`` (from the ``OIDCRPExample/`` directory).
-  1. Verify the RP is running at [http://localhost:8090](http://localhost:8090) **using Firefox**
+   1. Run the Relying Party (RP): ``python runner.py`` (from the ``OIDCRPExample/`` directory).
+   1. Verify the RP is running at [http://localhost:8090](http://localhost:8090) **using Firefox**
      (Google Chrome has some issues with CherryPy's sessions).
   
 1. Start adding to the skeleton code:
-  1. The missing parts are marked with ``TODO`` in ``oidc_rp/client.py``.
-  1. Read the [Python Cookbook](https://github.com/rohe/pyoidc/blob/master/doc/howto/rp.rst) for more
+   1. The missing parts are marked with ``TODO`` in ``oidc_rp/client.py``.
+   1. Read the [Python Cookbook](https://github.com/rohe/pyoidc/blob/master/doc/howto/rp.rst) for more
      information about how to use the pyOIDC OpenID Connect library.
-  1. Make sure to delete cookies and cached data in the browser while
+   1. Make sure to delete cookies and cached data in the browser while
      testing to avoid strange results (e.g. due to the browser caching
      redirects, etc.).
