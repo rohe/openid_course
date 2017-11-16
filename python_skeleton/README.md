@@ -5,7 +5,7 @@ This document describes how to setup the provided Python code
 
 * Python 2.7 or 3.4.3
 * Homebrew if using Mac
-* PyCharm Community Edition: https://www.jetbrains.com/pycharm/download/
+* PyCharm Community Edition: https://www.jetbrains.com/pycharm/download/ (optional)
 
 # Setup
 
@@ -31,7 +31,7 @@ On Ubuntu:
 ## Project setup
 
 ### Optional pre-setup
-1. Setup a [virtual environment](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
+1. Setup a [virtual environment](http://docs.python-guide.org/en/latest/dev/virtualenvs/). (You can do it directly from pyCharm)
 2. Activate the new virtual environment.
 
 ### Code setup
