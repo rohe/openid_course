@@ -1,5 +1,5 @@
 # Assignment instructions
-Download this repository as a [zip file](https://github.com/its-dirg/openid_course/archive/master.zip).
+Download this repository as a [zip file](https://github.com/alejandro-perez/openid_course/archive/master.zip).
 Choose one of the following assignments and follow the linked instructions:
 
 1. Implement a Relying Party in Python: [instructions](python_skeleton/README.md)
