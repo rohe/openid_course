@@ -1,5 +1,5 @@
 This document describes how to setup the provided Java code
-(in the directory ``java_skeleton/src``) in IntellyJ.
+(in the directory ``java_skeleton/src``) in IntellyJ. You can use Eclipse as well.
 
 
 # Prerequisites
