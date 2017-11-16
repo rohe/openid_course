@@ -1,5 +1,7 @@
 import os
 
+from pprint import pformat
+
 from oic.oic import Client as OIDCClient
 from oic.utils.authn.client import CLIENT_AUTHN_METHOD
 
@@ -55,7 +57,9 @@ class Client(object):
 
 def success_page(auth_code, access_token, id_token_claims, userinfo):
     html_page = read_from_file("success_page.html")
-    return html_page.format(auth_code, access_token, id_token_claims, userinfo)
+    return html_page.format(auth_code, access_token,
+                            pformat(id_token_claims.to_dict()),
+                            pformat(userinfo.to_dict()))
 
 
 def read_from_file(path):
