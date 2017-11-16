@@ -1,24 +1,25 @@
 This document describes how to setup the provided Java code
-(in the directory ``java_skeleton/src``) in Eclipse.
+(in the directory ``java_skeleton/src``) in IntellyJ.
 
 
 # Prerequisites
 
 * Java 1.8
-* Eclipse
+* IntellyJ Community Edition: https://www.jetbrains.com/idea/download
 
 
-# Setup using Eclipse
+# Setup using IntellyJ
+1. Install java 1.8: `apt-get install openjdk-8-jdk`
 
-1. Import the project in Eclipse:
-   1. File -> Import -> Maven -> Existing Maven Projects
-      1. Select the ``java_skeleton/`` directory as 'Root Directory' and press Finish.
-         
-   1. Make sure you're using the Java SE 8 JRE for the project (see [Eclipse settings](http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Ftasks%2Ftask-choose_config_jre.htm)).  
-
+1. Import the project in IntellyJ:
+   1. Click on the `Import project` option in the welcome window.
+   1. Select the ``java_skeleton/pom.xml`` file and press OK.
+   1. Click next on the following windows, and select the installed JDK (located in `/usr/lib/jvm/java-1.8.0-openjdk-amd64`)
+   1. Wait for the project to load
+   
 1. Test that the project runs:
    1. Specify the path to the directory containing all necessary files (``client.json``, ``index.html``, etc.) in ``Client::ROOT_PATH`` (in ``src/oidc_rp/Client.java``).
-   1. Run ``WebServer.java`` as a Java application.
+   1. Run ``WebServer.java`` (right-click and Run).
    1. The application should output something like:
 
          ```
@@ -36,5 +37,4 @@ This document describes how to setup the provided Java code
    1. Read the [Java Cookbook](http://connect2id.com/products/nimbus-oauth-openid-connect-sdk/guides/java-cookbook-for-openid-connect-public-clients) for more information
        about how to use the Nimbus OpenID Connect library.
    1. Make sure to delete cookies and cached data in the browser while
-       testing to avoid strange results (e.g. due to the browser caching
-       redirects, etc.).
+       testing to avoid strange results (e.g. due to the browser caching redirects, etc.).
